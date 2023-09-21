@@ -54,3 +54,7 @@ body {
   button:hover {
     background-color: #6fe74b;
   }
+.inicio {
+  text-align: center;
+  font-family: monospace;
+}
