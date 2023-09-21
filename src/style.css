@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+header h1 {
+  font-family: 'Creepster', cursive;
+  font-size: 7em; 
+  margin: 0; 
+  background-image: url('IMAGENES/PORTADA.jpg');
+  background-size: contain; /* Ajusta la forma en que la imagen se adapta al tamaño del título */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: left; /* Centra la imagen en el título */
+  padding: 20px 0;
+  -webkit-text-stroke: 1px #2eb107; 
+
+}
+body {
+    background-color: #121212; 
+    color: #ffffff;
+  }
+  
+  header {
+    background-color: #000000; /* Cambié el color de fondo del encabezado a negro */
+    color: #0cede2; /* Cambié el color del texto a un verde brillante similar al de la serie */
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  textarea {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border: 1px solid #2eb107;
+  }
+  
+  textarea::placeholder {
+    color: #b0b0b0;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1e1e1e;
+  }
+  
+  button {
+    background-color: #2eb107;
+    color: #1e1e1e;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #6fe74b;
+  }
