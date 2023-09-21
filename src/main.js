@@ -1,8 +1,16 @@
-import { example } from './dataFunctions.js';
+import data from './data/rickandmorty/rickandmorty.js';
+//import { example } from './dataFunctions.js';
 import { renderItems } from './view.js';
 
-// import data from './data/lol/lol.js';
-import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
+const dataRickAndMorty = data.results; 
+console.log(dataRickAndMorty);
 
-console.log(example, renderItems, data);
+const mainContainer = document.getElementById("container")
+mainContainer.innerHTML = renderItems(dataRickAndMorty);
+
+//renderItems(dataRickAndMorty)
+
+
+
+
+
