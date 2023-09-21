@@ -18,7 +18,7 @@
     "pretest:oas-web-api": "npm run pretest",
     "test:oas-web-api": "jest --verbose tests-read-only/oa/oa-web-api.spec.js",
     "open-coverage-report": "opener ./coverage/lcov-report/index.html",
-    "start": "serve src/",
+    "start": "serve src/ --listen 5000",
     "deploy": "gh-pages -d src"
   },
   "devDependencies": {
