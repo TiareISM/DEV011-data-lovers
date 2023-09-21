@@ -54,3 +54,8 @@ body {
   button:hover {
     background-color: #6fe74b;
   }
+
+  .intro {
+    font-family: sans-serif;
+    text-align: center;
+  }
