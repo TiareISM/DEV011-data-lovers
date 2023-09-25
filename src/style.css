@@ -54,8 +54,13 @@ body {
   button:hover {
     background-color: #6fe74b;
   }
+.inicio {
+  text-align: center;
+  font-family: monospace;
+}
 
-  .intro {
-    font-family: sans-serif;
-    text-align: center;
-  }
+#filter-select{
+
+}
+/*diseño para el filtro
+
