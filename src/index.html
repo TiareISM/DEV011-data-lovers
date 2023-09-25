@@ -17,16 +17,48 @@
       interdimensionales del científico loco Rick y su nieto Morty. Combina humor excéntrico,<br>
       ciencia ficción y exploración de temas existenciales en un viaje caótico a través del multiverso.<br>
       ¡Prepárate para reír y reflexionar mientras exploras realidades infinitas!"<br>
-
     </p>
-
   </article>
+</main>
+<label for="inputCharacter">Buscar por nombre:</label>
+<input id="inputCharacter" class="search" type="text" placeholder="Que personaje buscas..." value="" />
+<ul id="search-results"></ul>
+<main>
+  <section id="filter-section">
+    <label for="filter-select">Filtrar por:</label>
+    <select id="filter-select" data-testid="select-filter" name="species">
+      <option value="all">Todos</option>
+      <option value="Human">Humans</option>
+      <option value="Vampire">Vampire</option>
+      <option value="Disease">Disease</option>
+      <option value="unknown">Unknown</option>
+      <option value="Animal">Animal</option>
+      <option value="Robot">Robot</option>
+      <option value="Humanoid">Humanoid</option>
+      <option value="Alien">Alien</option>
+      <option value="Cronenberg">Cronenberg</option>
+      <option value="Poopybutthole">Poopybutthole</option>
+    </select>
+  </section>
+
+  <section id="sort-section">
+    <label for="sort-select">Ordenar por:</label>
+    <select id="sort-select" data-testid="select-sort" name="orderBy">
+      <option value="asc">A-Z</option>
+      <option value="desc">Z-A</option>
+    </select>
+  </section>
+  <button data-testid="button-clear">Reiniciar</button>
+</main>
+
+
+<main id="root">
+  <section>
+
+  </section>
 </main>
 
 <body>
-  <textarea name="personaje" placeholder="Que personaje buscas.."></textarea>
-  <div><button id="button-clear">LIMPIAR</button> </div>
-
 
   <main id="container" class="personajesContainer"></main>
 
