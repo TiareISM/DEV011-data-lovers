@@ -25,6 +25,40 @@ sortSelect.addEventListener("change", () => {
   const sortedData = sortData(dataRickAndMorty, "name", selectedValue);
   mainContainer.innerHTML = renderItems(sortedData);
 });
+// prueba para ver datos
+// Agregar las tarjetas al contenedor
+
+// Asignar el evento de clic a cada tarjeta
+const container = document.getElementById('container');
+
+const renderCards = () => {
+  const itemHTML = renderItems(dataRickAndMorty);
+  container.innerHTML = itemHTML;
+
+  const cards = document.querySelectorAll('.card');
+  cards.forEach((card) => {
+    card.addEventListener('click', toggleCard);
+  });
+};
+
+const toggleCard = (event) => {
+  const card = event.currentTarget;
+  const frontal = card.querySelector('.cara_frontal');
+  const trasera = card.querySelector('.cara_trasera');
+
+  if (frontal.style.display === 'block') {
+    frontal.style.display = 'none';
+    trasera.style.display = 'block';
+  } else {
+    frontal.style.display = 'block';
+    trasera.style.display = 'none';
+  }
+};
+
+renderCards();
+///////////////////
+
+
 document.addEventListener("DOMContentLoaded", function(){
   //boton de reinicio
   const clearButton = document.querySelector('[data-testid="button-clear"]');
