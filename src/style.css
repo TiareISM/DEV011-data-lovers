@@ -1,56 +1,263 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 
 header h1 {
   font-family: 'Creepster', cursive;
-  font-size: 7em; 
-  margin: 0; 
-  background-image: url('IMAGENES/PORTADA.jpg');
-  background-size: contain; /* Ajusta la forma en que la imagen se adapta al tamaño del título */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-position: left; /* Centra la imagen en el título */
+  font-size: 7em;
+  margin: 0;
+  background-image: url('IMAGENES/PORTADA-sinfondo.png');
+  background-size: contain;
+  /* Ajusta la forma en que la imagen se adapta al tamaño del título */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+  background-position: left;
+  /* Centra la imagen en el título */
   padding: 20px 0;
-  -webkit-text-stroke: 1px #2eb107; 
-
+  -webkit-text-stroke: 1px #2eb107;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
+/*para que el titulo no se monte sobre la img al achicar pantalla*/
+@media (max-width: 768px){
+  header h1{ 
+    font-size: 4em;
+    padding-left: 20px;
+  }
+}
+
 body {
-    background-color: #121212; 
-    color: #ffffff;
+ /*background-image: url('IMAGENES/universo_gris.jpg');
+ background-size: contain;
+ background-repeat:repeat;*/
+  background-color: #121212;
+  color: #ffffff;
+}
+
+header {
+  background-image: url('IMAGENES/universo.png');
+ /* background-color: #000000;
+  /* Cambié el color de fondo del encabezado a negro */
+  color: #0cede2;
+  /* Cambié el color del texto a un verde brillante similar al de la serie */
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer {
+  font-family: 'Kalam';
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #1e1e1e;
+}
+
+
+button {
+  font-family: 'Kalam';
+  background-color: #2eb107;
+  color: #1e1e1e;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #6fe74b;
+}
+
+.inicio {
+  text-align: center;
+  font-family: 'Kalam';
+}
+
+
+.menu{
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  padding: 10px;
+ }
+ label[for="sort-select"]{
+  display: flex;
+  flex-direction: row;
+  font-family: 'Creepster', cursive;
+  }
+ #sort-select {
+  display: flex;
+  border: none;
+  font-family: 'Creepster', cursive;
+  font-size: 20px;
+  color: #6FE74B;
+  margin-left: 20px;
+  background-color: #121212;
+  }
+  #sort-section{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
   }
   
-  header {
-    background-color: #000000; /* Cambié el color de fondo del encabezado a negro */
-    color: #0cede2; /* Cambié el color del texto a un verde brillante similar al de la serie */
-    text-align: center;
-    padding: 20px 0;
+  label[for="filter-select"]{
+  display: flex;
+  flex-direction: row;
+  font-family: 'Creepster', cursive;
   }
-  
-  textarea {
-    background-color: #2b2b2b;
-    color: #ffffff;
-    border: 1px solid #2eb107;
+  #filter-section{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
   }
-  
-  textarea::placeholder {
-    color: #b0b0b0;
+  #filter-select{
+   display: flex;
+   border: none;
+   background-color: #121212;
+   font-family: 'Creepster', cursive;
+   font-size: 20px;
+   color: #6FE74B;
+   margin: 0;
+   flex-direction: row;
   }
-  
-  footer {
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #1e1e1e;
+
+  label[for="inputCharacter"]{
+    display: flex;
+    flex-direction: row;
+    color: #6FE74B;
+    font-family: 'Creepster', cursive;
+    font-size: 20px;
+    margin-right: 10px;
+    align-items: center;
   }
-  
-  button {
-    background-color: #2eb107;
-    color: #1e1e1e;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+
+  #inputCharacter.search{
+    border: none; 
+    background-color: #121212;
+    color: #6FE74B;
+    font-family: 'Creepster', cursive;
+    font-size: 20px;
+    padding: 5px 10px; 
+    margin-right: 20px;
+    align-items: center;
   }
-  
-  button:hover {
-    background-color: #6fe74b;
-  }
+
+  /* Estilos para el contenedor de resultados de búsqueda */
+#search-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para cada elemento de resultado de búsqueda */
+#search-results li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #555;
+}
+
+#search-results li img {
+  width: 50px; /* Ajusta el tamaño de la imagen según tus preferencias */
+  margin-right: 10px; /* Espacio entre la imagen y el nombre */
+}
+
+#search-results li span {
+  font-size: 1.2em; /* Tamaño de fuente del nombre */
+  color: #fff; /* Color del texto */
+}
+
+
+/* Estilos para la tarjeta */
+/* Contenedor para las tarjetas */
+
+.card-container {
+background-image: url('IMAGENES/Web_Photo_Editor.jpg');
+ background-size: contain;
+  display: flex;
+  flex-wrap: wrap;
+  padding:4em 1em ; 
+}
+.card {
+  background-color: #333;
+  border: 1px solid #555;
+  width: 200px;
+  color: #fff;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+/*.card-container {
+ display: flex; /* Mostrar en línea
+  justify-content: space-around;} /* Espacio entre las tarjetas */
+
+.card:hover{
+  transform: scale(1.1);}
+ /* transform: rotateY(180deg);  
+}
+.cara_trasera:hover{
+  /*transform: scale(1.1);*/
+  /*transform: rotateY(0deg);  
+}
+
+/* Estilos para cada tarjeta */
+/*.cara_frontal {
+  background-color: #333;
+  border: 1px solid #555;
+  width: 10%;
+  margin: 5px;
+  color: #fff;
+  padding: 1em;
+}
+
+.cara_trasera {
+  background-color: #333;
+  border: 1px solid #555;
+  width: 10%;
+  margin: 5px;
+  color: #fff;
+  padding: 1em;
+  transform: rotateY(0deg);
+}*/
+img{
+  width: 100%;
+  border: 1px solid #555;
+  display: block
+}
+ul {
+  font-weight: bold;
+  margin-top: 0px;
+  padding: 0;
+  list-style: none;
+ ;
+}
+
+.nombre {
+  font-family: 'Kalam', sans-serif;
+  font-size: 1.5em;
+  color: #62cc85;
+  /* Texto blanco */
+  text-align: left;
+  padding-block-start: 1em;
+}
+
+.estado {
+  font-family: cursive;
+  font-size: 1em;
+  padding-block-end: 1em
+}
+.cara_trasera {
+    font-family: cursive; /* Cambia el tipo de letra a Arial o una fuente sans-serif genérica */
+}
+
+.cara_trasera p {
+  padding: 5px; /* Eliminar márgenes para los párrafos dentro de la tarjeta trasera */
+  margin: 0;
+}
