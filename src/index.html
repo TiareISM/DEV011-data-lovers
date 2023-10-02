@@ -7,69 +7,72 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<header>
-  <h1>RICK And MORTY</h1>
-</header>
-<main>
-  <article class="inicio">
-    <p>
-      "Rick and Morty" es una serie de animación para adultos que sigue las aventuras<br>
-      interdimensionales del científico loco Rick y su nieto Morty. Combina humor excéntrico,<br>
-      ciencia ficción y exploración de temas existenciales en un viaje caótico a través del multiverso.<br>
-      ¡Prepárate para reír y reflexionar mientras exploras realidades infinitas!"<br>
-    </p>
-  </article>
-</main>
-<label for="inputCharacter">Buscar por nombre:</label>
-<input id="inputCharacter" class="search" type="text" placeholder="Que personaje buscas..." value="" />
-<ul id="search-results"></ul>
-<main>
-  <section id="filter-section">
-    <label for="filter-select">Filtrar por:</label>
-    <select id="filter-select" data-testid="select-filter" name="species">
-      <option value="all">Todos</option>
-      <option value="Human">Humans</option>
-      <option value="Vampire">Vampire</option>
-      <option value="Disease">Disease</option>
-      <option value="unknown">Unknown</option>
-      <option value="Animal">Animal</option>
-      <option value="Robot">Robot</option>
-      <option value="Humanoid">Humanoid</option>
-      <option value="Alien">Alien</option>
-      <option value="Cronenberg">Cronenberg</option>
-      <option value="Poopybutthole">Poopybutthole</option>
-    </select>
-  </section>
-
-  <section id="sort-section">
-    <label for="sort-select">Ordenar por:</label>
-    <select id="sort-select" data-testid="select-sort" name="orderBy">
-      <option value="asc">A-Z</option>
-      <option value="desc">Z-A</option>
-    </select>
-  </section>
-  <button data-testid="button-clear">Reiniciar</button>
-</main>
-
-
-<main id="root">
-  <section>
-
-  </section>
-</main>
-
 <body>
-  <div id="container" class="card-container"></div>
-  <!--<main id="container" class="personajesContainer"></main>-->
-<!-- <p>
-    aqui va el texto de ricky
-  </p>-->
+  <header>
+    <h1>RICK And MORTY</h1>
+  </header>
+  <main>
+    <article class="inicio">
+      <p>
+        "Rick and Morty" es una serie de animación para adultos que sigue las aventuras<br>
+        interdimensionales del científico loco Rick y su nieto Morty. Combina humor excéntrico,<br>
+        ciencia ficción y exploración de temas existenciales en un viaje caótico a través del multiverso.<br>
+        ¡Prepárate para reír y reflexionar mientras exploras realidades infinitas!"<br>
+      </p>
+    </article>
+  </main>
 
+
+  <nav class="menu">
+
+    <label for="inputCharacter">Buscar por nombre:</label>
+    <input id="inputCharacter" class="search" type="text" placeholder="Que personaje buscas..." value=""
+      autocomplete="off" />
+
+
+    <section id="filter-section">
+      <label for="filter-select">Filtrar por:</label>
+      <select id="filter-select" data-testid="select-filter" name="species">
+        <option value="all">Todos</option>
+        <option value="Human">Humans</option>
+        <option value="Vampire">Vampire</option>
+        <option value="Disease">Disease</option>
+        <option value="unknown">Unknown</option>
+        <option value="Animal">Animal</option>
+        <option value="Robot">Robot</option>
+        <option value="Humanoid">Humanoid</option>
+        <option value="Alien">Alien</option>
+        <option value="Cronenberg">Cronenberg</option>
+        <option value="Poopybutthole">Poopybutthole</option>
+      </select>
+    </section>
+
+    <section id="sort-section">
+      <label for="sort-select">Ordenar por:</label>
+      <select id="sort-select" data-testid="select-sort" name="orderBy">
+        <option value="asc">A-Z</option>
+        <option value="desc">Z-A</option>
+      </select>
+    </section>
+    <button data-testid="button-clear">Reiniciar</button>
+
+  </nav>
+
+
+  <main id="root">
+    <section>
+
+    </section>
+  </main>
+
+
+  <div id="container" class="card-container"></div>
 
 
   <footer>
     <p> Autores: Tiare Infante y Camila Preciado </p>
   </footer>
+
   <script src="main.js" type="module"></script>
 </body>
 

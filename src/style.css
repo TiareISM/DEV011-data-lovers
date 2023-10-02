@@ -14,7 +14,16 @@ header h1 {
   /* Centra la imagen en el título */
   padding: 20px 0;
   -webkit-text-stroke: 1px #2eb107;
-
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+/*para que el titulo no se monte sobre la img al achicar pantalla*/
+@media (max-width: 768px){
+  header h1{ 
+    font-size: 4em;
+    padding-left: 20px;
+  }
 }
 
 body {
@@ -35,18 +44,12 @@ header {
   padding: 20px 0;
 }
 
-textarea {
-  background-color: #2b2b2b;
-  color: #ffffff;
-  border: 1px solid #2eb107;
-}
-
-textarea::placeholder {
-  color: #b0b0b0;
-}
-
 footer {
+  font-family: 'Kalam';
+  display: flex;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
   position: fixed;
   bottom: 0;
@@ -54,7 +57,9 @@ footer {
   background-color: #1e1e1e;
 }
 
+
 button {
+  font-family: 'Kalam';
   background-color: #2eb107;
   color: #1e1e1e;
   border: none;
@@ -68,10 +73,107 @@ button:hover {
 
 .inicio {
   text-align: center;
-  font-family: monospace;
+  font-family: 'Kalam';
 }
 
-#filter-select {}
+
+.menu{
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  padding: 10px;
+ }
+ label[for="sort-select"]{
+  display: flex;
+  flex-direction: row;
+  font-family: 'Creepster', cursive;
+  }
+ #sort-select {
+  display: flex;
+  border: none;
+  font-family: 'Creepster', cursive;
+  font-size: 20px;
+  color: #6FE74B;
+  margin-left: 20px;
+  background-color: #121212;
+  }
+  #sort-section{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  label[for="filter-select"]{
+  display: flex;
+  flex-direction: row;
+  font-family: 'Creepster', cursive;
+  }
+  #filter-section{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  #filter-select{
+   display: flex;
+   border: none;
+   background-color: #121212;
+   font-family: 'Creepster', cursive;
+   font-size: 20px;
+   color: #6FE74B;
+   margin: 0;
+   flex-direction: row;
+  }
+
+  label[for="inputCharacter"]{
+    display: flex;
+    flex-direction: row;
+    color: #6FE74B;
+    font-family: 'Creepster', cursive;
+    font-size: 20px;
+    margin-right: 10px;
+    align-items: center;
+  }
+
+  #inputCharacter.search{
+    border: none; 
+    background-color: #121212;
+    color: #6FE74B;
+    font-family: 'Creepster', cursive;
+    font-size: 20px;
+    padding: 5px 10px; 
+    margin-right: 20px;
+    align-items: center;
+  }
+
+  /* Estilos para el contenedor de resultados de búsqueda */
+#search-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para cada elemento de resultado de búsqueda */
+#search-results li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #555;
+}
+
+#search-results li img {
+  width: 50px; /* Ajusta el tamaño de la imagen según tus preferencias */
+  margin-right: 10px; /* Espacio entre la imagen y el nombre */
+}
+
+#search-results li span {
+  font-size: 1.2em; /* Tamaño de fuente del nombre */
+  color: #fff; /* Color del texto */
+}
+
 
 /* Estilos para la tarjeta */
 /* Contenedor para las tarjetas */
@@ -159,4 +261,3 @@ ul {
   padding: 5px; /* Eliminar márgenes para los párrafos dentro de la tarjeta trasera */
   margin: 0;
 }
-/*diseño para el filtro

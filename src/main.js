@@ -80,29 +80,16 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 //funcion buscar por nombre
-const searchInput = document.getElementById("inputCharacter");
-const searchResults = document.getElementById("search-results");
-const originalResults = searchResults.innerHTML; //almacena el estado original del resultado de busqueda
-
-searchInput.addEventListener("keyup", () => {
-  const searchText = searchInput.value.toLowerCase();
-  searchResults.innerHTML = "";
-  //si el campo esta vacio volver a los resultados originales
-  if (searchText === "") {
-    searchResults.innerHTML = originalResults;
-    return;
-  }
-  const filterData = dataRickAndMorty.filter((character) =>
-    character.name.toLocaleLowerCase().includes(searchText)
+const inputCharacter = document.getElementById("inputCharacter");
+function searchByName(){
+  const searchTerm = inputCharacter.value.trim().toLowerCase();
+  const filteredData = dataRickAndMorty.filter((character) =>
+    character.name.toLocaleLowerCase().includes(searchTerm)
   );
-  filterData.forEach((character) => {
-    const listItem = document.createElement("li");
-    listItem.innerHTML = `
-  <img src="${character.image}" alt="${character.name}" />
-  <span>${character.name}</span>
-`;
-    searchResults.appendChild(listItem);
-  });
-});
+  mainContainer.innerHTML = renderItems(filteredData);
+}
+inputCharacter.addEventListener("keyup", searchByName);
+
+
 
 
