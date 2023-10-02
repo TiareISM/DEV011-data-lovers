@@ -9,8 +9,9 @@ export const filterData = (data, filterby, value) => {
 //funcion de ordenar asc y desc
 export const sortData = (data, sortBy, sortOrder) => {
 //verificar si sortorder es asc o desc
+const dataorden=[...data];
   if (sortOrder === "asc") {
-    data.sort((a,b) => {
+    dataorden.sort((a,b) => {
       if (a[sortBy] < b[sortBy]) {
         return -1;
       }
@@ -20,7 +21,7 @@ export const sortData = (data, sortBy, sortOrder) => {
       return 0;
     });
   } else if (sortOrder=== "desc") {
-    data.sort((a,b) => {
+    dataorden.sort((a,b) => {
       if(a[sortBy] > b[sortBy]){
         return -1;
       }
@@ -30,5 +31,5 @@ export const sortData = (data, sortBy, sortOrder) => {
       return 0;
     });
   }
-  return data;
+  return dataorden;
 };
