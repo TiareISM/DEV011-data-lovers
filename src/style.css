@@ -18,16 +18,17 @@ header h1 {
   justify-content: center;
   text-align: center;
 }
+
 /*para que el titulo no se monte sobre la img al achicar pantalla*/
-@media (max-width: 768px){
-  header h1{ 
+@media (max-width: 768px) {
+  header h1 {
     font-size: 4em;
     padding-left: 20px;
   }
 }
 
 body {
- /*background-image: url('IMAGENES/universo_gris.jpg');
+  /*background-image: url('IMAGENES/universo_gris.jpg');
  background-size: contain;
  background-repeat:repeat;*/
   background-color: #121212;
@@ -36,7 +37,7 @@ body {
 
 header {
   background-image: url('IMAGENES/universo.png');
- /* background-color: #000000;
+  /* background-color: #000000;
   /* Cambié el color de fondo del encabezado a negro */
   color: #0cede2;
   /* Cambié el color del texto a un verde brillante similar al de la serie */
@@ -77,7 +78,7 @@ button:hover {
 }
 
 
-.menu{
+.menu {
   height: auto;
   display: flex;
   flex-wrap: wrap;
@@ -86,13 +87,15 @@ button:hover {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   width: 100%;
   padding: 10px;
- }
- label[for="sort-select"]{
+}
+
+label[for="sort-select"] {
   display: flex;
   flex-direction: row;
   font-family: 'Creepster', cursive;
-  }
- #sort-select {
+}
+
+#sort-select {
   display: flex;
   border: none;
   font-family: 'Creepster', cursive;
@@ -100,56 +103,59 @@ button:hover {
   color: #6FE74B;
   margin-left: 20px;
   background-color: #121212;
-  }
-  #sort-section{
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-  }
-  
-  label[for="filter-select"]{
+}
+
+#sort-section {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+label[for="filter-select"] {
   display: flex;
   flex-direction: row;
   font-family: 'Creepster', cursive;
-  }
-  #filter-section{
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-  }
-  #filter-select{
-   display: flex;
-   border: none;
-   background-color: #121212;
-   font-family: 'Creepster', cursive;
-   font-size: 20px;
-   color: #6FE74B;
-   margin: 0;
-   flex-direction: row;
-  }
+}
 
-  label[for="inputCharacter"]{
-    display: flex;
-    flex-direction: row;
-    color: #6FE74B;
-    font-family: 'Creepster', cursive;
-    font-size: 20px;
-    margin-right: 10px;
-    align-items: center;
-  }
+#filter-section {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
 
-  #inputCharacter.search{
-    border: none; 
-    background-color: #121212;
-    color: #6FE74B;
-    font-family: 'Creepster', cursive;
-    font-size: 20px;
-    padding: 5px 10px; 
-    margin-right: 20px;
-    align-items: center;
-  }
+#filter-select {
+  display: flex;
+  border: none;
+  background-color: #121212;
+  font-family: 'Creepster', cursive;
+  font-size: 20px;
+  color: #6FE74B;
+  margin: 0;
+  flex-direction: row;
+}
 
-  /* Estilos para el contenedor de resultados de búsqueda */
+label[for="inputCharacter"] {
+  display: flex;
+  flex-direction: row;
+  color: #6FE74B;
+  font-family: 'Creepster', cursive;
+  font-size: 20px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+#inputCharacter.search {
+  border: none;
+  background-color: #121212;
+  color: #6FE74B;
+  font-family: 'Creepster', cursive;
+  font-size: 20px;
+  padding: 5px 10px;
+  margin-right: 20px;
+  align-items: center;
+}
+
+/* Estilos para el contenedor de resultados de búsqueda */
 #search-results {
   list-style: none;
   padding: 0;
@@ -165,25 +171,36 @@ button:hover {
 }
 
 #search-results li img {
-  width: 50px; /* Ajusta el tamaño de la imagen según tus preferencias */
-  margin-right: 10px; /* Espacio entre la imagen y el nombre */
+  width: 50px;
+  /* Ajusta el tamaño de la imagen según tus preferencias */
+  margin-right: 10px;
+  /* Espacio entre la imagen y el nombre */
 }
 
 #search-results li span {
-  font-size: 1.2em; /* Tamaño de fuente del nombre */
-  color: #fff; /* Color del texto */
+  font-size: 1.2em;
+  /* Tamaño de fuente del nombre */
+  color: #fff;
+  /* Color del texto */
 }
 
 
 /* Estilos para la tarjeta */
 /* Contenedor para las tarjetas */
 
-.card-container {
-background-image: url('IMAGENES/Web_Photo_Editor.jpg');
- background-size: contain;
+ #root.card-container{
+  background-image: url('IMAGENES/Web_Photo_Editor.jpg');
+  background-size: contain;
   display: flex;
   flex-wrap: wrap;
-  padding:4em 1em ; 
+  padding: 4em 1em;
+}
+ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+li{
+  list-style:none;
 }
 .card {
   background-color: #333;
@@ -194,17 +211,20 @@ background-image: url('IMAGENES/Web_Photo_Editor.jpg');
   padding: 10px;
   cursor: pointer;
 }
+
 /*.card-container {
  display: flex; /* Mostrar en línea
   justify-content: space-around;} /* Espacio entre las tarjetas */
 
-.card:hover{
-  transform: scale(1.1);}
- /* transform: rotateY(180deg);  
+.card:hover {
+  transform: scale(1.1);
+}
+
+/* transform: rotateY(180deg);  
 }
 .cara_trasera:hover{
   /*transform: scale(1.1);*/
-  /*transform: rotateY(0deg);  
+/*transform: rotateY(0deg);  
 }
 
 /* Estilos para cada tarjeta */
@@ -226,18 +246,19 @@ background-image: url('IMAGENES/Web_Photo_Editor.jpg');
   padding: 1em;
   transform: rotateY(0deg);
 }*/
-img{
+img {
   width: 100%;
   border: 1px solid #555;
   display: block
 }
-ul {
+
+/*ul {
   font-weight: bold;
   margin-top: 0px;
   padding: 0;
   list-style: none;
- ;
-}
+  ;
+}*/
 
 .nombre {
   font-family: 'Kalam', sans-serif;
@@ -253,11 +274,15 @@ ul {
   font-size: 1em;
   padding-block-end: 1em
 }
+
 .cara_trasera {
-    font-family: cursive; /* Cambia el tipo de letra a Arial o una fuente sans-serif genérica */
+  font-family: cursive;
+  /* Cambia el tipo de letra a Arial o una fuente sans-serif genérica */
 }
 
 .cara_trasera p {
-  padding: 5px; /* Eliminar márgenes para los párrafos dentro de la tarjeta trasera */
+  padding: 5px;
+  /* Eliminar márgenes para los párrafos dentro de la tarjeta trasera */
   margin: 0;
 }
+

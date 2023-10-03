@@ -1,15 +1,15 @@
 // estas funciones son de ejemplo
 export const renderItems = (data) => {
+  const ul = document.createElement('ul') 
   const itemHTML = data.map((item) => {
     return `
-    <div itemscope itemtype="rickandmorty" class="card" style="width: 200px; margin: 10px; cursor: pointer;">
+    <li itemscope itemtype="rickandmorty" class="card" ">
         <!-- Tarjeta frontal -->
         <div class="cara_frontal">
-          <ul>
             <img itemprop="image" src="${item.image}" alt="${item.name}" />
-            <li class="nombre"><strong itemprop="name" >${item.name}</strong></li>
-            <li class="estado"><strong itemprop="status">Status:</strong> ${item.status}</li>
-          </ul>
+            <p class="nombre"><strong itemprop="name" >${item.name}</strong></p>
+            <p class="estado"><strong itemprop="status">Status:</strong> ${item.status}</p>
+        
         </div>
         <!-- Tarjeta trasera -->
         <div class="cara_trasera" style="display: none;">
@@ -23,8 +23,10 @@ export const renderItems = (data) => {
           <p><strong>Location:</strong> ${item.location.name}</p>
           <p><strong>Episodes:</strong> ${item.episode.length}</p>
         </div>
-      </div>`;
+      </li>`;
   });
-  return itemHTML.join('');
+  ul.innerHTML = itemHTML.join('');
+  console.log(ul)
+  return ul.outerHTML;
 };
 

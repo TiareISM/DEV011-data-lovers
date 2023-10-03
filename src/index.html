@@ -24,7 +24,11 @@
 
 
   <nav class="menu">
-
+    <ul class="estadistica">
+      <li data-testid="vivo">Vivos: </li>
+      <li data-testid="muerto">Muertos: </li>
+      <li data-testid="desconocido">Desconocidos: </li>
+    </ul>
     <label for="inputCharacter">Buscar por nombre:</label>
     <input id="inputCharacter" class="search" type="text" placeholder="Que personaje buscas..." value=""
       autocomplete="off" />
@@ -59,14 +63,16 @@
   </nav>
 
 
-  <main id="root">
+  <main id="">
     <section>
 
     </section>
   </main>
 
 
-  <div id="container" class="card-container"></div>
+  <div id="root" class="card-container">
+   
+  </div>
 
 
   <footer>

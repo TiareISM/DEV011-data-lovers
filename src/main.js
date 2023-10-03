@@ -1,23 +1,26 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import { filterData } from './dataFunctions.js';
+import { computeStats, filterData } from './dataFunctions.js';
 import { sortData } from './dataFunctions.js';
 import { renderItems } from './view.js';
 
 // constantes
 const dataRickAndMorty = data.results;
-const mainContainer = document.getElementById("container");// viasualizar la data
+const mainContainer = document.querySelector("#root");// viasualizar la data
 let array2 = dataRickAndMorty;
 let itemHTML = renderItems(dataRickAndMorty);
-const filterSelect = document.getElementById("filter-select");//funcion filtro
-const sortSelect = document.getElementById("sort-select");// sortData
-const inputCharacter = document.getElementById("inputCharacter");//funcion buscar por nombre
+const filterSelect = document.querySelector("#filter-select");//funcion filtro
+const sortSelect = document.querySelector("#sort-select");// sortData
+const inputCharacter = document.querySelector("#inputCharacter");//funcion buscar por nombre
+const Vivo = document.querySelector('[data-testid="vivo"]');
+const Muerto = document.querySelector('[data-testid="muerto"]');
+const Desconocido = document.querySelector('[data-testid="desconocido"]');
 
 // Asignar el evento de clic a cada tarjeta
 const renderCards = () => {
   mainContainer.innerHTML = itemHTML; // Usar la variable actualizada
   const cards = document.querySelectorAll('.card');
   cards.forEach((card) => {
-    card.addEventListener('click', toggleCard);
+    card.addEventListener('click',(e)=> toggleCard(e));
   });
 };
 
@@ -37,8 +40,8 @@ const toggleCard = (event) => {
 renderCards();
 
 // funcion del filtro
-filterSelect.addEventListener("change", () => {
-  const selectedValue = filterSelect.value;
+filterSelect.addEventListener("change", (e) => {
+  const selectedValue = e.target.value;
   const filteredData = filterData(dataRickAndMorty, "species", selectedValue);
   array2 = filteredData;
   itemHTML = renderItems(filteredData); // Actualizar itemHTML
@@ -67,15 +70,16 @@ inputCharacter.addEventListener("keyup", searchByName);
 document.addEventListener("DOMContentLoaded", function () {
   //boton de reinicio
   const clearButton = document.querySelector('[data-testid="button-clear"]');
-  clearButton.addEventListener('click', () => {
+  clearButton.addEventListener('click', (e) => {
+    e.preventDefault();
     resetAplication();
   });
   function resetAplication() {
     //limpiar filter
-    const filterSelect = document.getElementById('filter-select');
+    const filterSelect = document.querySelector('#filter-select');
     filterSelect.value = 'all';
     //limpiar sort
-    const sortSelect = document.getElementById('sort-select');
+    const sortSelect = document.querySelector('#sort-select');
     sortSelect.value = 'asc';
     //mostrar elementos en orden principal
     array2 = dataRickAndMorty;
@@ -84,8 +88,17 @@ document.addEventListener("DOMContentLoaded", function () {
     renderCards();
   }
 });
+/// pueva estadistica
 
+const personajes = data.results;
+const personajesVivos = computeStats(personajes, "Alive");
+const personajesMuertos = computeStats(personajes, "Dead");
+const personajesdesconocidos = computeStats(personajes, "unknown");
 
+// Mostrar los resultados en los elementos HTML
+Vivo.textContent = `Vivos: ${parseInt(personajesVivos)} `;
+Muerto.textContent = `Muertos: ${parseInt(personajesMuertos)} `;
+Desconocido.textContent = `Desconocidos: ${parseInt(personajesdesconocidos)} `;
 
 
 
