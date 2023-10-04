@@ -24,11 +24,6 @@
 
 
   <nav class="menu">
-    <ul class="estadistica">
-      <li data-testid="vivo">Vivos: </li>
-      <li data-testid="muerto">Muertos: </li>
-      <li data-testid="desconocido">Desconocidos: </li>
-    </ul>
     <label for="inputCharacter">Buscar por nombre:</label>
     <input id="inputCharacter" class="search" type="text" placeholder="Que personaje buscas..." value=""
       autocomplete="off" />
@@ -61,19 +56,16 @@
     <button data-testid="button-clear">Reiniciar</button>
 
   </nav>
-
-
-  <main id="">
-    <section>
-
-    </section>
   </main>
-
-
-  <div id="root" class="card-container">
-   
-  </div>
-
+ 
+<main id="principal">
+  <ul class="estadistica">
+    <li class="alive" data-testid="vivo">Vivos: </li>
+    <li class="dead" data-testid="muerto">Muertos: </li>
+    <li class="none" data-testid="desconocido">Desconocidos: </li>
+  </ul>
+  <div id="root" class="card-container"> </div>
+</main>
 
   <footer>
     <p> Autores: Tiare Infante y Camila Preciado </p>

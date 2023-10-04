@@ -66,6 +66,16 @@ function searchByName() {
   renderCards();
 }
 inputCharacter.addEventListener("keyup", searchByName);
+/// prueva estadistica
+const personajesVivos = computeStats(array2, "Alive");
+const personajesMuertos = computeStats(array2, "Dead");
+const personajesdesconocidos = computeStats(array2, "unknown");
+
+
+// Mostrar los resultados en los elementos HTML
+Vivo.textContent = ` Vivos: ${parseInt(personajesVivos)} `;
+Muerto.textContent = ` Muertos: ${parseInt(personajesMuertos)} `;
+Desconocido.textContent = ` Desconocidos: ${parseInt(personajesdesconocidos)} `;
 // reiniciar valores
 document.addEventListener("DOMContentLoaded", function () {
   //boton de reinicio
@@ -88,17 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     renderCards();
   }
 });
-/// pueva estadistica
 
-const personajes = data.results;
-const personajesVivos = computeStats(personajes, "Alive");
-const personajesMuertos = computeStats(personajes, "Dead");
-const personajesdesconocidos = computeStats(personajes, "unknown");
-
-// Mostrar los resultados en los elementos HTML
-Vivo.textContent = `Vivos: ${parseInt(personajesVivos)} `;
-Muerto.textContent = `Muertos: ${parseInt(personajesMuertos)} `;
-Desconocido.textContent = `Desconocidos: ${parseInt(personajesdesconocidos)} `;
 
 
 
