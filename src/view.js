@@ -26,7 +26,6 @@ export const renderItems = (data) => {
       </li>`;
   });
   ul.innerHTML = itemHTML.join('');
-  console.log(ul)
   return ul.outerHTML;
 };
 

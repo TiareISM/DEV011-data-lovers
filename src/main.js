@@ -1,13 +1,13 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import { computeStats, filterData } from './dataFunctions.js';
-import { sortData } from './dataFunctions.js';
+import { filterData, computeStats, sortData } from './dataFunctions.js';
 import { renderItems } from './view.js';
 
 // constantes
 const dataRickAndMorty = data.results;
 const mainContainer = document.querySelector("#root");// viasualizar la data
-let array2 = dataRickAndMorty;
+let cadenaData = dataRickAndMorty;
 let itemHTML = renderItems(dataRickAndMorty);
+let stats = computeStats(cadenaData);
 const filterSelect = document.querySelector("#filter-select");//funcion filtro
 const sortSelect = document.querySelector("#sort-select");// sortData
 const inputCharacter = document.querySelector("#inputCharacter");//funcion buscar por nombre
@@ -20,10 +20,9 @@ const renderCards = () => {
   mainContainer.innerHTML = itemHTML; // Usar la variable actualizada
   const cards = document.querySelectorAll('.card');
   cards.forEach((card) => {
-    card.addEventListener('click',(e)=> toggleCard(e));
+    card.addEventListener('click', (e) => toggleCard(e));
   });
 };
-
 const toggleCard = (event) => {
   const card = event.currentTarget;
   const frontal = card.querySelector('.cara_frontal');
@@ -38,27 +37,27 @@ const toggleCard = (event) => {
   }
 };
 renderCards();
-
 // funcion del filtro
 filterSelect.addEventListener("change", (e) => {
   const selectedValue = e.target.value;
   const filteredData = filterData(dataRickAndMorty, "species", selectedValue);
-  array2 = filteredData;
+  cadenaData = filteredData;
   itemHTML = renderItems(filteredData); // Actualizar itemHTML
   renderCards();
+  estaditica();
 });
 
 //sortData
 sortSelect.addEventListener("change", () => {
   const selectedValue = sortSelect.value;
-  const sortedData = sortData(array2, "name", selectedValue);
+  const sortedData = sortData(cadenaData, "name", selectedValue);
   itemHTML = renderItems(sortedData); // Actualizar itemHTML
   renderCards();
 });
 //funcion buscar por nombre
 function searchByName() {
   const searchTerm = inputCharacter.value.trim().toLowerCase();
-  const filteredData = array2.filter((character) =>
+  const filteredData = cadenaData.filter((character) =>
     character.name.toLocaleLowerCase().includes(searchTerm)
   );
   itemHTML = renderItems(filteredData); // Actualizar itemHTML
@@ -66,18 +65,18 @@ function searchByName() {
   renderCards();
 }
 inputCharacter.addEventListener("keyup", searchByName);
-/// prueva estadistica
-const personajesVivos = computeStats(array2, "Alive");
-const personajesMuertos = computeStats(array2, "Dead");
-const personajesdesconocidos = computeStats(array2, "unknown");
 
-
-// Mostrar los resultados en los elementos HTML
-Vivo.textContent = ` Vivos: ${parseInt(personajesVivos)} `;
-Muerto.textContent = ` Muertos: ${parseInt(personajesMuertos)} `;
-Desconocido.textContent = ` Desconocidos: ${parseInt(personajesdesconocidos)} `;
+const estaditica = () => {
+  stats = computeStats(cadenaData);
+  // Mostrar los resultados en los elementos HTML
+  Vivo.textContent = ` Vivos: ${stats.alive} `;
+  Muerto.textContent = ` Muertos: ${stats.dead} `;
+  Desconocido.textContent = ` Desconocidos: ${stats.unknown} `;
+}
+estaditica();
 // reiniciar valores
 document.addEventListener("DOMContentLoaded", function () {
+
   //boton de reinicio
   const clearButton = document.querySelector('[data-testid="button-clear"]');
   clearButton.addEventListener('click', (e) => {
@@ -92,10 +91,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const sortSelect = document.querySelector('#sort-select');
     sortSelect.value = 'asc';
     //mostrar elementos en orden principal
-    array2 = dataRickAndMorty;
+    cadenaData = dataRickAndMorty;
     inputCharacter.value = '';
     itemHTML = renderItems(dataRickAndMorty); // Actualizar itemHTML
     renderCards();
+    estaditica();
   }
 });
 

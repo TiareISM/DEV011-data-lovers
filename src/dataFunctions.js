@@ -37,9 +37,27 @@ export const sortData = (data, sortBy, sortOrder) => {
   return dataorden;
 };
 // funcion estdistica
-export const computeStats = (personajes, estado) => {
-  return personajes.reduce((total, personaje) => {
-    return personaje.status === estado ? total + 1 : total;
-  }, 0);
+export const computeStats = (personajes) => {
+  const initialStats = {
+    alive: 0,
+    dead: 0,
+    unknown: 0
+  };
+  const stats = personajes.reduce((acc, personaje) => {
+    if (personaje.status === 'Alive') {
+      acc.alive++;
+    } else if (personaje.status === 'Dead') {
+      acc.dead++;
+    } else if (personaje.status === 'unknown') {
+      acc.unknown++;
+    }
+    return acc;
+  }, initialStats);
+  // Convierte los conteos a números usando parseInt
+  stats.alive = parseInt(stats.alive, 10);
+  stats.dead = parseInt(stats.dead, 10);
+  stats.unknown = parseInt(stats.unknown, 10);
+
+  return stats;
 };
 

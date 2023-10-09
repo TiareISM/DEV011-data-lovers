@@ -189,10 +189,11 @@ label[for="inputCharacter"] {
 /* estilo estadistrica*/
 .estadistica{
   height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: inline;
+  /*flex-wrap: wrap;
+  justify-content: center;*/
   font-family: 'Kalam';
+  margin: 0 auto;
 }
 
 .alive{
