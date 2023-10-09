@@ -7,10 +7,10 @@ header h1 {
   margin: 0;
   background-image: url('IMAGENES/PORTADA-sinfondo.png');
   background-size: contain;
-  /* Ajusta la forma en que la imagen se adapta al tamaño del título */
   background-repeat: no-repeat;
-  /* Evita que la imagen se repita */
+  /* Ajusta la forma en que la imagen se adapta al tamaño del título */
   background-position: left;
+  /* Evita que la imagen se repita */
   /* Centra la imagen en el título */
   padding: 20px 0;
   -webkit-text-stroke: 1px #2eb107;
@@ -28,19 +28,13 @@ header h1 {
 }
 
 body {
-  /*background-image: url('IMAGENES/universo_gris.jpg');
- background-size: contain;
- background-repeat:repeat;*/
   background-color: #121212;
   color: #ffffff;
 }
 
 header {
   background-image: url('IMAGENES/universo.png');
-  /* background-color: #000000;
-  /* Cambié el color de fondo del encabezado a negro */
   color: #0cede2;
-  /* Cambié el color del texto a un verde brillante similar al de la serie */
   text-align: center;
   padding: 20px 0;
 }
@@ -57,7 +51,6 @@ footer {
   width: 100%;
   background-color: #1e1e1e;
 }
-
 
 button {
   font-family: 'Kalam';
@@ -78,8 +71,6 @@ button:hover {
   text-align: center;
   font-family: 'Kalam';
 }
-
-
 .menu {
   height: auto;
   display: flex;
@@ -88,7 +79,8 @@ button:hover {
   background-color: black;
   box-shadow: 0px 4px 4px #00000040;
   padding: 1em;
-  max-width: 100%; /* Ajusta según sea necesario */
+  max-width: 100%;
+  /* Ajusta según sea necesario */
   margin: 0 auto;
   box-sizing: border-box;
   font-size: 1.5em;
@@ -166,7 +158,8 @@ label[for="inputCharacter"] {
 }
 
 /* Estilos para cada elemento de resultado de búsqueda */
-#search-results li {
+#search-results {
+  /*li*/
   display: flex;
   align-items: center;
   padding: 10px;
@@ -186,68 +179,81 @@ label[for="inputCharacter"] {
   color: #fff;
   /* Color del texto */
 }
+
 /* estilo estadistrica*/
-.estadistica{
+.estadistica {
   height: auto;
-  display: inline;
+  display: -webkit-box;
   /*flex-wrap: wrap;
   justify-content: center;*/
   font-family: 'Kalam';
   margin: 0 auto;
+  width: fit-content;
 }
 
-.alive{
+
+.alive {
   /*width: fit-content;*/
-    backdrop-filter: blur(2px);
-    border-radius: 0.65em;
-    box-shadow: 5px 5px  #6FE74B;;
-    padding: 10px 10px;
-    text-align: center;
-   /* font-size: 1em;*/
-    margin-right: 2em;
+  backdrop-filter: blur(2px);
+  border-radius: 0.65em;
+  box-shadow: 5px 5px #6FE74B;
+  ;
+  padding: 10px 10px;
+  text-align: center;
+  /* font-size: 1em;*/
+  margin-right: 2em;
 }
-.dead{
+
+.dead {
 
   /*width: fit-content;*/
-    backdrop-filter: blur(2px);
-    border-radius: 0.65em;
-    box-shadow: 5px 5px  #bb1616;;
-    padding: 10px 10px;
-    text-align: center;
-    /* font-size: 1em;*/
-    margin-right: 2em;
+  backdrop-filter: blur(2px);
+  border-radius: 0.65em;
+  box-shadow: 5px 5px #bb1616;
+  ;
+  padding: 10px 10px;
+  text-align: center;
+  /* font-size: 1em;*/
+  margin-right: 2em;
 }
-.none{
+
+.none {
   /*width: fit-content;*/
-    backdrop-filter: blur(2px);
-    border-radius: 0.65em;;
-    box-shadow: 5px 5px  #0cede2;;
-    padding: 10px 10px;
-    text-align: center;
-    /* font-size: 1em;*/
+  backdrop-filter: blur(2px);
+  border-radius: 0.65em;
+  ;
+  box-shadow: 5px 5px #0cede2;
+  ;
+  padding: 10px 10px;
+  text-align: center;
+  /* font-size: 1em;*/
 }
+
 /* Estilos para la tarjeta */
 /* Contenedor para las tarjetas */
-#principal{
+#principal {
   background-image: url('IMAGENES/Web_Photo_Editor.jpg');
   background-size: contain;
- 
+
 }
- #root.card-container{
-   background-size: contain;
+
+#root.card-container {
+  background-size: contain;
   display: flex;
   flex-wrap: wrap;
   margin-block-end: 4em;
 }
 
-ul{/* ul de las tarjetas*/
+.ultarjetas {
   display: flex;
   flex-wrap: wrap;
-  
+
 }
-li{
-  list-style:none;
+
+li {
+  list-style: none;
 }
+
 .card {
   background-color: #333;
   border: 1px solid #555;
@@ -265,6 +271,7 @@ li{
 .card:hover {
   transform: scale(1.1);
 }
+
 img {
   width: 100%;
   border: 1px solid #555;
@@ -304,4 +311,3 @@ img {
   /* Eliminar márgenes para los párrafos dentro de la tarjeta trasera */
   margin: 0;
 }
-

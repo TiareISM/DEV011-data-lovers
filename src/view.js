@@ -1,6 +1,7 @@
 // estas funciones son de ejemplo
 export const renderItems = (data) => {
   const ul = document.createElement('ul') 
+  ul.setAttribute('class', 'ultarjetas');
   const itemHTML = data.map((item) => {
     return `
     <li itemscope itemtype="rickandmorty" class="card" ">
