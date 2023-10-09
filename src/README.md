@@ -73,7 +73,7 @@ Además, puedes explorar los 493 personajes a través de tarjetas individuales. 
 ### Visita la página
 
 Puede ser visualizada desde:
-https://camipre.github.io/DEV011-data-lovers
+https://camipre.github.io/DEV011-data-lovers/src/
 
 
 ### Autoras
