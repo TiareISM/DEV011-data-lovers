@@ -3,6 +3,7 @@
 Este proyecto es una aplicación web dinámica y visualmente divertida diseñada para los fanáticos de "Rick and Morty". Con el fin de invitar a los usuarios a explorar el vasto universo de la serie, donde podrán conocer en detalle los datos de sus fascinantes personajes.
 Con nuestra plataforma interactiva, podran filtrar, ordenar y buscar personajes de manera rápida y sencilla. Además, se entrega una estadísticas que revela información sobre el estado vital de los personajes.
 
+![Eleccion Tema](./IMAGENES/pagina-rick-and-morty.gif)
 
 ## Historia de Usuario
 Hemos realizado una encuesta para recopilar opiniones sobre las preferencias de los usuarios en relación a nuestro proyecto.
@@ -35,6 +36,15 @@ Nuestro prototipo de alta fidelidad representa la versión más avanzada y detal
 
 ![Prototipo de alta fidelidad](./IMAGENES/prototipoalta1.png)
 
+## Testeos de Usabilidad
+
+Nuestra página fue testeada por 3 personas, las cuales nos dieron el siguiente feeback:
+
+1. Cambiar de posicion la imagen ya que por algunos nombres largos se ve despropocionado.
+
+2. Mejorar las dimensiones de la barra menu (busqueda,filtros y limpiar), ya que se ve muy pequeño.
+
+3. Hacer más entendible la estadistica, sacarla del menu para mejor visualizacion.
 
 ## Consideraciones técnicas
 En este proyectos hemos aplicado una serie de consideraciones técnicas para garantizar su funcionamiento y mantener un código organizado.
@@ -57,11 +67,15 @@ En nuestra página encontrarás una barra de navegación que incluye las siguien
 2. Filtro por especie: Filtra los personajes según su especie.
 3. Ordenado de la A-Z y Z-A: Ordena los personajes alfabéticamente en orden ascendente (A-Z) o descendente (Z-A).
 4. Botón de reinicio: Restablece todos los cambios.
-Además, puedes explorar los 493 personajes a través de tarjetas individuales. Al hacer clic, s mostrará información adicional sobre ese personaje.
+5. Estadistica del estado de vida de cada uno de los personajes visualizados.
+Además, puedes explorar los 493 personajes a través de tarjetas individuales. Al hacer clic, se mostrará información adicional sobre ese personaje.
 
 ### Visita la página
 
 Puede ser visualizada desde:
+https://camipre.github.io/DEV011-data-lovers
+
+
 ### Autoras
 - Camila Preciado
 - Tiare Infante
