@@ -264,10 +264,6 @@ li {
   cursor: pointer;
 }
 
-/*.card-container {
- display: flex; /* Mostrar en línea
-  justify-content: space-around;} /* Espacio entre las tarjetas */
-
 .card:hover {
   transform: scale(1.1);
 }
@@ -277,14 +273,6 @@ img {
   border: 1px solid #555;
   display: block
 }
-
-/*ul {
-  font-weight: bold;
-  margin-top: 0px;
-  padding: 0;
-  list-style: none;
-  ;
-}*/
 
 .nombre {
   font-family: 'Kalam', sans-serif;
