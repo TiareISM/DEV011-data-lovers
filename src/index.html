@@ -20,41 +20,39 @@
         ¡Prepárate para reír y reflexionar mientras exploras realidades infinitas!"<br>
       </p>
     </article>
+
+    <nav class="menu">
+      <label for="inputCharacter">Buscar por nombre:</label>
+      <input id="inputCharacter" class="search" type="text" placeholder="Que personaje buscas..." value=""
+        autocomplete="off" />
+
+      <section id="filter-section">
+        <label for="filter-select">Filtrar por:</label>
+        <select id="filter-select" data-testid="select-filter" name="species">
+          <option value="all">Todos</option>
+          <option value="Human">Humanos</option>
+          <option value="Vampire">Vampiros</option>
+          <option value="Disease">Enfermedades</option>
+          <option value="unknown">Desconocido</option>
+          <option value="Animal">Animales</option>
+          <option value="Robot">Robots</option>
+          <option value="Humanoid">Humanoides</option>
+          <option value="Alien">Aliens</option>
+          <option value="Cronenberg">Cronenberg</option>
+          <option value="Poopybutthole">Poopybutthole</option>
+        </select>
+      </section>
+
+      <section id="sort-section">
+        <label for="sort-select">Ordenar por:</label>
+        <select id="sort-select" data-testid="select-sort" name="orderBy">
+          <option value="asc">A-Z</option>
+          <option value="desc">Z-A</option>
+        </select>
+      </section>
+      <button data-testid="button-clear">Reiniciar</button>
+    </nav>
   </main>
-
-
-  <nav class="menu">
-    <label for="inputCharacter">Buscar por nombre:</label>
-    <input id="inputCharacter" class="search" type="text" placeholder="Que personaje buscas..." value=""
-      autocomplete="off" />
-
-
-    <section id="filter-section">
-      <label for="filter-select">Filtrar por:</label>
-      <select id="filter-select" data-testid="select-filter" name="species">
-        <option value="all">Todos</option>
-        <option value="Human">Humanos</option>
-        <option value="Vampire">Vampiros</option>
-        <option value="Disease">Enfermedades</option>
-        <option value="unknown">Desconocido</option>
-        <option value="Animal">Animales</option>
-        <option value="Robot">Robots</option>
-        <option value="Humanoid">Humanoides</option>
-        <option value="Alien">Aliens</option>
-        <option value="Cronenberg">Cronenberg</option>
-        <option value="Poopybutthole">Poopybutthole</option>
-      </select>
-    </section>
-
-    <section id="sort-section">
-      <label for="sort-select">Ordenar por:</label>
-      <select id="sort-select" data-testid="select-sort" name="orderBy">
-        <option value="asc">A-Z</option>
-        <option value="desc">Z-A</option>
-      </select>
-    </section>
-    <button data-testid="button-clear">Reiniciar</button>
-  </nav>
 
   <main id="principal">
     <ul class="estadistica">
