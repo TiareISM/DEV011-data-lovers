@@ -1,105 +1,79 @@
-import data from './data/rickandmorty/rickandmorty.js';
-import { filterData, computeStats, sortData } from './dataFunctions.js';
-import { renderItems } from './view.js';
+import data from "./data/rickandmorty/rickandmorty.js";
+import { filterData, computeStats, sortData } from "./dataFunctions.js";
+import { renderItems } from "./view.js";
 
-// constantes
+// Constantes
 const dataRickAndMorty = data.results;
-const mainContainer = document.querySelector("#root");// viasualizar la data
+const mainContainer = document.querySelector("#root");
 let cadenaData = dataRickAndMorty;
 let itemHTML = renderItems(dataRickAndMorty);
-let stats = computeStats(cadenaData);
-const filterSelect = document.querySelector("#filter-select");//funcion filtro
-const sortSelect = document.querySelector("#sort-select");// sortData
-const inputCharacter = document.querySelector("#inputCharacter");//funcion buscar por nombre
+const filterSelect = document.querySelector("#filter-select");
+const sortSelect = document.querySelector("#sort-select");
+const inputCharacter = document.querySelector("#inputCharacter");
 const Vivo = document.querySelector('[data-testid="vivo"]');
 const Muerto = document.querySelector('[data-testid="muerto"]');
 const Desconocido = document.querySelector('[data-testid="desconocido"]');
 
-// Asignar el evento de clic a cada tarjeta
+// Función para renderizar las tarjetas
 const renderCards = () => {
-  mainContainer.innerHTML = itemHTML; // Usar la variable actualizada
-  const cards = document.querySelectorAll('.card');
-  cards.forEach((card) => {
-    card.addEventListener('click', (e) => toggleCard(e));
-  });
+  mainContainer.innerHTML = itemHTML;
 };
-const toggleCard = (event) => {
-  const card = event.currentTarget;
-  const frontal = card.querySelector('.cara_frontal');
-  const trasera = card.querySelector('.cara_trasera');
 
-  if (frontal.style.display === 'block') {
-    frontal.style.display = 'none';
-    trasera.style.display = 'block';
-  } else {
-    frontal.style.display = 'block';
-    trasera.style.display = 'none';
-  }
-};
-renderCards();
-// funcion del filtro
-filterSelect.addEventListener("change", (e) => {
-  const selectedValue = e.target.value;
+// Función del filtro
+filterSelect.addEventListener("change", () => {
+  const selectedValue = filterSelect.value;
   const filteredData = filterData(dataRickAndMorty, "species", selectedValue);
   cadenaData = filteredData;
-  itemHTML = renderItems(filteredData); // Actualizar itemHTML
+  itemHTML = renderItems(filteredData);
   renderCards();
-  estaditica();
+  updateStats();
 });
 
-//sortData
+// Función para ordenar
 sortSelect.addEventListener("change", () => {
   const selectedValue = sortSelect.value;
   const sortedData = sortData(cadenaData, "name", selectedValue);
-  itemHTML = renderItems(sortedData); // Actualizar itemHTML
+  itemHTML = renderItems(sortedData);
   renderCards();
 });
-//funcion buscar por nombre
+
+// Función para buscar por nombre
 function searchByName() {
   const searchTerm = inputCharacter.value.trim().toLowerCase();
   const filteredData = cadenaData.filter((character) =>
     character.name.toLocaleLowerCase().includes(searchTerm)
   );
-  itemHTML = renderItems(filteredData); // Actualizar itemHTML
+  itemHTML = renderItems(filteredData);
   mainContainer.innerHTML = itemHTML;
   renderCards();
 }
+
 inputCharacter.addEventListener("keyup", searchByName);
 
-const estaditica = () => {
-  stats = computeStats(cadenaData);
-  // Mostrar los resultados en los elementos HTML
+// Función para actualizar las estadísticas
+function updateStats() {
+  const stats = computeStats(cadenaData);
   Vivo.textContent = ` Vivos: ${stats.alive} `;
   Muerto.textContent = ` Muertos: ${stats.dead} `;
   Desconocido.textContent = ` Desconocidos: ${stats.unknown} `;
 }
-estaditica();
-// reiniciar valores
-document.addEventListener("DOMContentLoaded", function () {
 
-  //boton de reinicio
+// Función para reiniciar valores
+document.addEventListener("DOMContentLoaded", function () {
   const clearButton = document.querySelector('[data-testid="button-clear"]');
-  clearButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    resetAplication();
-  });
-  function resetAplication() {
-    //limpiar filter
-    const filterSelect = document.querySelector('#filter-select');
-    filterSelect.value = 'all';
-    //limpiar sort
-    const sortSelect = document.querySelector('#sort-select');
-    sortSelect.value = 'asc';
-    //mostrar elementos en orden principal
+  clearButton.addEventListener("click", resetApplication);
+
+  function resetApplication() {
+    filterSelect.value = "all";
+    sortSelect.value = "asc";
     cadenaData = dataRickAndMorty;
-    inputCharacter.value = '';
-    itemHTML = renderItems(dataRickAndMorty); // Actualizar itemHTML
+    inputCharacter.value = "";
+    itemHTML = renderItems(dataRickAndMorty);
     renderCards();
-    estaditica();
+    updateStats();
   }
+  renderCards();
 });
 
-
-
-
-
+// Inicializar estadísticas
+updateStats();
